@@ -1,0 +1,54 @@
+<svg viewBox="17.568 8.352 178.55999999999997 116.06400000000001" xmlns="http://www.w3.org/2000/svg" version="1.2" style="max-height: 500px" width="178.55999999999997" height="116.06400000000001">
+  <style>
+    /* Base styles preserved from your original */
+    .a {
+      fill: none;
+      stroke: #000;
+      stroke-miterlimit: 10;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .b {
+      fill: none; /* Kept transparent to ensure line-only drawing */
+      stroke: #000;
+      stroke-miterlimit: 10;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Core Animation Logic */
+    .signature-path {
+      animation: writeMe 0.6s ease-in-out forwards;
+    }
+
+    @keyframes writeMe {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    /* Adjusted with larger bounds to prevent any premature clipping */
+    .p1 { stroke-dasharray: 550; stroke-dashoffset: 550; animation-delay: 0s; }
+    .p2 { stroke-dasharray: 60;  stroke-dashoffset: 60;  animation-delay: 0.6s; }
+    .p3 { stroke-dasharray: 60;  stroke-dashoffset: 60;  animation-delay: 0.8s; }
+    .p4 { stroke-dasharray: 100; stroke-dashoffset: 100; animation-delay: 1.0s; }
+    .p5 { stroke-dasharray: 150; stroke-dashoffset: 150; animation-delay: 1.4s; }
+  </style>
+
+  
+  <path d="m19.7 116.8c10.4-23.7 20.9-47.4 30.8-71.3 3.5-8.4 6.7-16.9 9.9-25.3 2.7-6.9 3.8-11.5 5.4-9.4 7.3 9.5 8.9 27.7 11.4 38.9 3.6 15.5 6.7 31.1 10.4 46.6 0.7 2.9 8.4 22.6 8.1 25.6-0.1 1.4-2.1-1.8-3.2-2.8-1.7-1.5-3.4-3-5.2-4.5-7.3-6-10.2-8-18.5-13.5-13.1-8.7-27-16.3-39.3-26-3-2.3-10-6.7-7-8.8 5.6-3.9 40-1.6 45.5-1.5 30.8 0.4 61.7 2.3 92.6 1.7 10.8-0.2 22.6-2.6 33.4-1.4" class="a signature-path p1" fill-rule="evenodd"/>
+  
+  
+  <path d="m114.5 35.3c-6.2 6.7-12.3 13.4-18.5 20.1-1 1.1-7.2 5.6-7 7.4" class="a signature-path p2" fill-rule="evenodd"/>
+  
+  
+  <path d="m95.6 34.7c5 10 10.1 18.7 17.9 26.8" class="b signature-path p3" fill-rule="evenodd"/>
+  
+  
+  <path d="m121.8 46.9c5.3 0.9 10.7 1.4 15.6-1.6 2.8-1.7 5-6.7 0.4-8.1-12.6-3.9-22 13.9-10.9 21.3 3.6 2.4 7.9 1.7 12 1.3 3.4-0.5 7.6-0.4 10.7-2" class="a signature-path p4" fill-rule="evenodd"/>
+  
+  
+  <path d="m157.6 16.8c-1.2 31.2 4.1 61.1 5.6 92.1" class="b signature-path p5" fill-rule="evenodd"/>
+</svg>

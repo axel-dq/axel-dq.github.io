@@ -1,0 +1,268 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="{{site.active_lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axel Quintero</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+    <div id="presentation">
+        <nav>
+            {% for lang in site.languages %}
+                {% if lang != site.active_lang %}
+                    {% if lang == site.default_lang %}
+                        <a href="/ ">
+                            🇪🇸
+                        </a>
+                    {% else %}
+                        <a href="/{{ lang }}">
+                            🇬🇧
+                        </a>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </nav>
+
+        <canvas id="algebra"></canvas>
+
+        <div id="pfp">
+            <img src="/assets/images/axel.jpg" alt="Axel Quintero"/>
+        </div>
+        <h1>Axel Quintero</h1>
+        <object type="image/svg+xml" data="/assets/images/animated-signature.svg" width="252" height="144" id="signature">
+            Your browser does not support SVGs.
+        </object>
+    </div>
+    <div id="about-me">
+        <canvas id="calculus"></canvas>
+        <h1>{{ site.data.strings[site.active_lang].aboutMe }}</h1>
+        <p>
+            {{site.data.strings[site.active_lang].aboutMeContent}}
+        </p>
+        <h2>{{ site.data.strings[site.active_lang].studies }}</h2>
+        <ul class="knowledge" id="studies">
+            <li>
+                <h2>Colegio Los Arcos</h2>
+                <img src="/assets/images/los-arcos.png" alt="Los Arcos"/>
+                
+                <div class="timeline start">
+                    <p>2011</p>
+                    <p>2014</p>
+                </div>
+            </li>
+            <li>
+                <h2>Ulrich Intermediate School</h2>
+
+                <img src="/assets/images/ulrich.png" alt="Ulrich Jr. High"/>
+
+                <div class="timeline">
+                    <p>2015</p>
+                </div>
+            </li>
+            <li>
+                <h2>Bonnette Jr. High</h2>
+
+                <img src="/assets/images/bonnette.png" alt="Bonnette Jr. High"/>
+                <div class="timeline">
+                    <p>2016</p>
+                </div>
+            </li>
+            <li>
+                <h2>Instituto Cumbres de Caracas</h2>
+
+                <img src="/assets/images/icc.png" alt="Instituto Cumbres de Caracas"/>
+
+                <div class="timeline">
+                    <p>2017</p>
+                    <p>2023</p>
+                </div>
+            </li>
+            <li>
+                <h2>Universidad Monteávila</h2>
+
+                <img src="/assets/images/uma.png" alt="Universidad Monteávila"/>
+
+                <div class="timeline end">
+                    <p style="margin-inline: 0;">2026</p>
+                </div>
+            </li>
+        </ul>
+        <h2>{{ site.data.strings[site.active_lang].skills }}</h2>
+        <ul class="knowledge">
+            <li>
+                <h2>{{site.data.strings[site.active_lang].programming}}</h2>
+
+                <div>
+                    <h3>{{site.data.strings[site.active_lang].programmingLanguages}}</h3>
+                    <ul class="programming-languages">
+                        <li>
+                            <img src="/assets/images/rust.png" alt="Rust">
+                            <p>Rust</p>
+                        </li>
+                        <li>
+                            <img src="/assets/images/js.png" alt="JavaScript">
+                            <p>JavaScript</p>
+                        </li>
+                        <li>
+                            <img src="/assets/images/ts.png" alt="TypeScript">
+                            <p>TypeScript</p>
+                        </li>
+                        <li>
+                            <img src="/assets/images/python.png" alt="Python">
+                            <p>Python</p>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>{{site.data.strings[site.active_lang].frameworks}}</h3>
+                    <ul class="programming-languages">
+                        <li>
+                            <img src="/assets/images/nextjs.svg" alt="Next.js">
+                            <p>Next.js</p>
+                        </li>
+                        <li>
+                            <img src="/assets/images/nodejs.svg" alt="Node.js">
+                            <p>Node.js</p>
+                        </li>
+                        <li>
+                            <img src="/assets/images/graphQL.svg" alt="GraphQL">
+                            <p>GraphQL</p>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>{{site.data.strings[site.active_lang].others}}</h3>
+                    <ul class="programming-languages">
+                        <li>
+                            <img src="/assets/images/git.png" alt="Git">
+                            <p>Git</p>
+                        </li>
+                        <li>
+                            <img src="/assets/images/github.png" alt="GitHub">
+                            <p>GitHub</p>
+                        </li>
+                        <li>
+                            <img src="/assets/images/linux.png" alt="Linux">
+                            <p>Linux</p>
+                        </li>
+                        <li>
+                            <img src="/assets/images/docker.png" alt="Docker">
+                            <p>Docker</p>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li id="languages">
+                <h2>{{site.data.strings[site.active_lang].languages}}</h2>
+                <div class="language">
+                    <p>{{site.data.strings[site.active_lang].spanish}}</p>
+                    <div class="language-levels">
+                        <span>A1</span>
+                        <span>A2</span>
+                        <span>B1</span>
+                        <span>B2</span>
+                        <span>C1</span>
+                        <span>C2</span>
+                        <span class="active">{{site.data.strings[site.active_lang].native}}</span>
+                    </div>
+                </div>
+                <div class="language">
+                    <p>{{site.data.strings[site.active_lang].english}}</p>
+                    <div class="language-levels">
+                        <span>A1</span>
+                        <span>A2</span>
+                        <span>B1</span>
+                        <span>B2</span>
+                        <span class="active">C1</span>
+                        <span>C2</span>
+                        <span>{{site.data.strings[site.active_lang].native}}</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="projects">
+        <canvas id="programming"></canvas>
+        <h1>{{site.data.strings[site.active_lang].projects}}</h1>
+        <ul class="projects-container">
+            <li class="project">
+                <h3>Vector: Interior Design</h3>
+                <a href="https://vectorinterior.design" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/images/vector-logo.svg" alt="Vector: Interior Design" class="project-logo">
+               </a>
+                <p>
+                    {{site.data.strings[site.active_lang].vectorDescription}}
+                </p>
+                <a class="github" href="https://github.com/axel-dq/Vector-Interior-Design" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/images/github.png" alt="Github">
+                </a>
+            </li>
+            <li class="project">
+                <h3>UMA Casino</h3>
+                <img src="/assets/images/uma-casino.svg" alt="UMA Casino" class="project-logo">
+                <p>
+                    {{site.data.strings[site.active_lang].umaCasinoDescription}}
+                </p>
+                <a class="github" href="https://github.com/ad-quintero/UMA-Casino" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/images/github.png" alt="Github">
+                </a>
+            </li>
+            <li class="project">
+                <h3>Strawberry GraphQL</h3>
+                <img src="/assets/images/strawberry.png" alt="Strawberry GraphQL" class="project-logo">
+                <p>
+                    {{site.data.strings[site.active_lang].strawberryDescription}}
+                </p>
+                <a class="github" href="https://github.com/ad-quintero/UMA-Casino" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/images/github.png" alt="Github">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="contact">
+        <h1>
+            {{site.data.strings[site.active_lang].contact}}
+        </h1>
+
+        <div id="contact-list">
+            <a href="mailto:aquintero_2030im@alumni.uma.edu.ve" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280 320-200v-80L480-520 160-720v80l320 200Z"/></svg>
+                aquintero_2030im@alumni.uma.edu.ve
+            </a>
+            <a href="https://github.com/axel-dq" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <img src="/assets/images/github.png" alt="Github">
+                Axel Quintero (Personal)
+            </a>
+            <a href="https://github.com/ad-quintero" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <img src="/assets/images/github.png" alt="Github">
+                Axel Quintero (UMA)
+            </a>
+            <a href="tel:584142264969" rel="noopener noreferrer" class="contact-link">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12Z"/></svg> 
+                +58-414-226-4969
+            </a>
+        </div>
+        
+        <div id="cradle">
+            <div id="bar">
+                <span class="ball ball-start"></span>
+                <span class="ball"></span>
+                <span class="ball"></span>
+                <span class="ball"></span>
+                <span class="ball"></span>
+                <span class="ball"></span>
+                <span class="ball ball-end"></span>
+            </div>
+            <div id="base"></div>
+        </div>
+    </div>
+</body>
+
+<script src="/assets/js/algebra.js" type="module"></script>
+<script src="/assets/js/calculus.js" type="module"></script>
+<script src="/assets/js/programming.js" type="module"></script>
+</html>

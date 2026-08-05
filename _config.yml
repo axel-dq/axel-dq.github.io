@@ -1,0 +1,6 @@
+plugins:
+  - jekyll-polyglot
+
+languages: ["en", "es"]
+default_lang: "es"
+exclude_from_localization: ["images", "fonts", "sitemap"]

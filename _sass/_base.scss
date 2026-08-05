@@ -1,0 +1,669 @@
+// --- Design Tokens & Variables ---
+$text-main: #f8fafc;
+$text-muted: #94a3b8;
+
+// Glass Card Base
+$card-bg: rgba(255, 255, 255, 0.05);
+$card-border: rgba(255, 255, 255, 0.1);
+
+// Accent Colors
+$accent-cyan: #38bdf8;
+$accent-emerald: #34d399;
+$accent-purple: #c084fc;
+$accent-orange: #fb923c;
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #0b0f19;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: $text-main;
+    overflow-x: hidden;
+}
+
+// Background Canvases Base Style
+canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+    filter: brightness(0.65) contrast(1.1);
+}
+
+// Ensure children stay cleanly above the background canvas
+#presentation, #about-me, #projects, #contact {
+    position: relative;
+    z-index: 1;
+
+    & > *:not(canvas) {
+        position: relative;
+        z-index: 2;
+    }
+
+    nav {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 2rem;
+
+        a {
+            display: block;
+            transition: font-size 0.2s ease, color 0.2s ease;
+            text-decoration: none;
+
+            &:hover {
+                font-size: 2.25rem;
+            }
+        }
+    }
+}
+
+// ==========================================
+// 1. PRESENTATION SECTION (Deep Space Navy)
+// ==========================================
+#presentation {
+    background: radial-gradient(circle at 50% 50%, #0f172a 0%, #080c14 100%);
+    padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 4vw, 2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 85vh;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    h1 {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        font-weight: 800;
+        margin: 1.5rem 0 0.5rem;
+        background: linear-gradient(135deg, #ffffff 30%, $accent-cyan);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: -0.02em;
+    }
+
+    #signature {
+        filter: invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+        margin-top: 1rem;
+        max-width: 80%;
+        height: auto;
+    }
+
+    #pfp {
+        width: clamp(8rem, 20vw, 13rem);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 2px solid rgba(56, 189, 248, 0.4);
+        box-shadow: 0 0 30px rgba(56, 189, 248, 0.2),
+                    inset 0 0 15px rgba(56, 189, 248, 0.1);
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        &:hover {
+            transform: scale(1.05);
+            border-color: $accent-cyan;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            object-position: center 10%;
+        }
+    }
+}
+
+// ==========================================
+// 2. ABOUT ME SECTION (Deep Forest Teal/Emerald)
+// ==========================================
+#about-me {
+    background: linear-gradient(180deg, #061111 0%, #0a1c1b 50%, #061111 100%);
+    padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    h1 {
+        font-size: clamp(2rem, 5vw, 2.75rem);
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        background: linear-gradient(135deg, #fff, $accent-emerald);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    h2 {
+        font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+        margin-top: clamp(2.5rem, 5vw, 4rem);
+        margin-bottom: 1.5rem;
+        color: #f1f5f9;
+        letter-spacing: -0.01em;
+        text-align: center;
+    }
+
+    & > p {
+        max-width: 44rem;
+        width: 100%;
+        text-align: center;
+        line-height: 1.75;
+        font-size: clamp(0.95rem, 2vw, 1.1rem);
+        color: $text-muted;
+        background: rgba(10, 30, 28, 0.7);
+        padding: clamp(1.25rem, 3vw, 1.75rem) clamp(1.25rem, 4vw, 2.25rem);
+        border-radius: 1rem;
+        border: 1px solid rgba(52, 211, 153, 0.15);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+}
+
+// Shared Knowledge Grid Styles
+.knowledge {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.5rem;
+    padding-inline-start: 0;
+    width: 100%;
+
+    // --- Timeline / Studies ---
+    &#studies {
+        gap: 1rem;
+        justify-content: center;
+
+        & > li {
+            background: rgba(15, 38, 35, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(52, 211, 153, 0.15);
+            border-radius: 1rem;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            max-width: 100%;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+                border-color: rgba(52, 211, 153, 0.4);
+            }
+
+            h2 {
+                font-size: 1rem;
+                margin: 0;
+                color: #e2e8f0;
+                min-height: 2.5rem;
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        img {
+            width: auto;
+            height: 10rem;
+            aspect-ratio: 1;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+        }
+
+        .timeline {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 0.35rem;
+            background-color: $accent-emerald;
+            border-radius: 1rem;
+            margin-top: 1rem;
+
+            &.start::before {
+                content: '';
+                position: absolute;
+                left: -0.25rem;
+                width: 0.75rem;
+                height: 0.75rem;
+                background-color: $accent-emerald;
+                border-radius: 50%;
+                box-shadow: 0 0 8px $accent-emerald;
+            }
+
+            &.end {
+                background: linear-gradient(to right, $accent-emerald 0%, transparent 100%);
+            }
+
+            p {
+                position: absolute;
+                top: 0.75rem;
+                font-size: 0.85rem;
+                font-weight: 600;
+                color: $text-muted;
+                margin: 0;
+
+                &:first-child { left: 0; }
+                &:last-child { right: 0; }
+            }
+        }
+    }
+
+    // --- General Knowledge Cards (Skills, Languages) ---
+    & > li {
+        list-style: none;
+        background: rgba(15, 38, 35, 0.65);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(52, 211, 153, 0.15);
+        padding: clamp(1.25rem, 3vw, 2rem);
+        border-radius: 1.25rem;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        flex: 1 1 20rem;
+        width: 100%;
+
+        h2 {
+            margin: 0;
+            font-size: 1.4rem;
+            color: $accent-emerald;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 0.75rem;
+        }
+
+        h3 {
+            font-size: 1rem;
+            color: $text-muted;
+            margin: 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    }
+
+    .programming-languages {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        list-style: none;
+        gap: 1.25rem;
+        padding-inline-start: 0;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+
+        & > li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+
+            img {
+                width: clamp(2.5rem, 6vw, 3rem);
+                aspect-ratio: 1;
+                object-fit: contain;
+                filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+                transition: transform 0.2s ease;
+
+                &:hover {
+                    transform: scale(1.15);
+                }
+            }
+
+            p {
+                margin: 0;
+                font-size: 0.85rem;
+                color: $text-muted;
+            }
+        }
+    }
+
+    // Language Proficiency Pills
+    #languages {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .language {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+
+            & > p {
+                margin: 0;
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #f1f5f9;
+            }
+
+            .language-levels {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.35rem;
+                align-items: center;
+                background: rgba(0, 0, 0, 0.25);
+                padding: 0.35rem;
+                border-radius: 2rem;
+                border: 1px solid rgba(255, 255, 255, 0.05);
+
+                & > span {
+                    color: $text-muted;
+                    background-color: transparent;
+                    border-radius: 1rem;
+                    padding: 0.4rem 0.75rem;
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                    transition: all 0.3s ease;
+                    flex-basis: 20%;
+                }
+
+                & > .active {
+                    color: #0f172a;
+                    font-weight: 700;
+                    padding: 0.4rem 1rem;
+                    background: linear-gradient(135deg, $accent-orange, #f59e0b);
+                    box-shadow: 0 0 12px rgba(251, 146, 60, 0.4);
+                }
+            }
+        }
+    }
+}
+
+// ==========================================
+// 3. PROJECTS SECTION (Dark Violet / Purple)
+// ==========================================
+#projects {
+    background: linear-gradient(180deg, #10081a 0%, #190b29 50%, #10081a 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(2rem, 4vw, 3rem);
+    padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    h1 {
+        font-size: clamp(2rem, 5vw, 2.75rem);
+        font-weight: 700;
+        margin: 0;
+        text-align: center;
+        background: linear-gradient(135deg, #fff, $accent-purple);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .projects-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 2rem;
+        max-width: 72rem;
+        width: 100%;
+        padding-inline-start: 0;
+
+        .project {
+            position: relative;
+            background: rgba(35, 17, 54, 0.65);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(192, 132, 252, 0.2);
+            border-radius: 1.25rem;
+            padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1.25rem, 3vw, 2rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.25rem;
+            flex: 1 1 20rem;
+            max-width: 34rem;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+
+            &:hover {
+                transform: translateY(-6px);
+                border-color: rgba(192, 132, 252, 0.5);
+            }
+
+            h3 {
+                margin: 0;
+                font-size: clamp(1.25rem, 3vw, 1.5rem);
+                color: #f8fafc;
+                text-align: center;
+            }
+
+            p {
+                color: $text-muted;
+                line-height: 1.6;
+                text-align: center;
+                font-size: clamp(0.875rem, 2vw, 0.95rem);
+                margin-bottom: 1.5rem;
+            }
+
+            .project-logo {
+                max-width: 100%;
+                min-height: 5rem;
+                max-height: 12rem;
+                height: auto;
+                transition: transform 0.3s ease-in-out;
+                filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.4));
+
+                &:hover {
+                    transform: scale(1.03);
+                }
+            }
+
+            .github {
+                width: 2.25rem !important;
+                height: 2.25rem;
+                position: absolute;
+                bottom: 1.25rem;
+                right: 1.25rem;
+                opacity: 0.7;
+                transition: opacity 0.2s ease, transform 0.2s ease;
+
+                &:hover {
+                    opacity: 1;
+                    transform: scale(1.15);
+                }
+
+                img {
+                    width: 100% !important;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+
+// ==========================================
+// 4. CONTACT & NEWTON'S CRADLE SECTION (Slate Charcoal)
+// ==========================================
+#contact {
+    background: linear-gradient(180deg, #0f172a 0%, #060911 100%);
+    padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem) 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(2rem, 4vw, 3.5rem);
+
+    h1 {
+        text-align: center;
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        margin: 0;
+        color: #fff;
+    }
+
+    #contact-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        .contact-link {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+            color: $text-main;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.85rem 1.5rem;
+            border-radius: 3rem;
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: rgba(56, 189, 248, 0.1);
+                border-color: $accent-cyan;
+                color: $accent-cyan;
+                transform: translateY(-2px);
+            }
+
+            img, svg {
+                width: 1.5rem;
+                height: 1.5rem;
+                aspect-ratio: 1;
+            }
+        }
+    }
+
+    // --- Newton's Cradle Visual ---
+    #cradle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-top: 1rem;
+        transform-origin: bottom center;
+
+        #bar {
+            width: 18rem;
+            height: 9rem;
+            background-color: transparent;
+            border: 3px solid rgba(226, 232, 240, 0.2);
+            border-top-left-radius: 0.75rem;
+            border-top-right-radius: 0.75rem;
+            border-bottom: none;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: start;
+            gap: 1.7rem;
+
+            .ball {
+                width: 2px;
+                height: 7rem;
+                background: linear-gradient(to bottom, rgba(226, 232, 240, 0.3), #e2e8f0);
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -1rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 1.75rem;
+                    aspect-ratio: 1;
+                    background: radial-gradient(circle at 35% 35%, #ffffff, #e2e8f0 60%, #475569 100%);
+                    border-radius: 50%;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+                }
+
+                &.ball-start {
+                    transform-origin: top center;
+                    animation: cradle-first 2s ease-in-out infinite;
+                }
+
+                &.ball-end {
+                    transform-origin: top center;
+                    animation: cradle-last 2s ease-in-out infinite;
+                }
+            }
+        }
+
+        #base {
+            width: 22rem;
+            height: 1.25rem;
+            background: linear-gradient(90deg, #1e293b, #334155, #1e293b);
+            border-radius: 0.25rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        }
+    }
+}
+
+// --- Keyframe Animations ---
+@keyframes cradle-first {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(35deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes cradle-last {
+    45% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-35deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+// ==========================================
+// MEDIA QUERIES FOR EXTRA BREAKPOINT TWEAKS
+// ==========================================
+@media (max-width: 600px) {
+    #contact-list {
+        flex-direction: column;
+        width: 100%;
+
+        .contact-link {
+            width: 100%;
+            max-width: 20rem;
+        }
+    }
+
+    // Dynamically scale down Newton's cradle on narrow phones
+    #cradle {
+        transform: scale(0.75);
+    }
+}
+
+@media (max-width: 380px) {
+    #cradle {
+        transform: scale(0.6);
+    }
+}

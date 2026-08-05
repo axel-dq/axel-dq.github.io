@@ -1,0 +1,23 @@
+# Jekyll output
+/_site/
+/.sass-cache/
+/.jekyll-cache/
+/.jekyll-metadata
+
+# Package managers & dependencies
+/vendor/
+/.bundle/
+/node_modules/
+
+# Local configuration overrides
+_config.build.yml
+
+# Environment variables
+.env
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
