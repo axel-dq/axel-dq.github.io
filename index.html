@@ -30,10 +30,10 @@
         <canvas id="algebra"></canvas>
 
         <div id="pfp">
-            <img src="/assets/images/axel.jpg" alt="Axel Quintero"/>
+            <img src={{ "/assets/images/axel.jpg" | relative_url }} alt="Axel Quintero"/>
         </div>
         <h1>Axel Quintero</h1>
-        <object type="image/svg+xml" data="/assets/images/animated-signature.svg" width="252" height="144" id="signature">
+        <object type="image/svg+xml" data={{  "/assets/images/animated-signature.svg" | relative_url }} width="252" height="144" id="signature">
             Your browser does not support SVGs.
         </object>
     </div>
@@ -47,7 +47,7 @@
         <ul class="knowledge" id="studies">
             <li>
                 <h2>Colegio Los Arcos</h2>
-                <img src="/assets/images/los-arcos.png" alt="Los Arcos"/>
+                <img src={{ "/assets/images/los-arcos.png" | relative_url }} alt="Los Arcos"/>
                 
                 <div class="timeline start">
                     <p>2011</p>
@@ -56,8 +56,7 @@
             </li>
             <li>
                 <h2>Ulrich Intermediate School</h2>
-
-                <img src="/assets/images/ulrich.png" alt="Ulrich Jr. High"/>
+                <img src={{ "/assets/images/ulrich.png" | relative_url }} alt="Ulrich Jr. High"/>
 
                 <div class="timeline">
                     <p>2015</p>
@@ -66,7 +65,7 @@
             <li>
                 <h2>Bonnette Jr. High</h2>
 
-                <img src="/assets/images/bonnette.png" alt="Bonnette Jr. High"/>
+                <img src={{ "/assets/images/bonnette.png" | relative_url }} alt="Bonnette Jr. High"/>
                 <div class="timeline">
                     <p>2016</p>
                 </div>
@@ -74,7 +73,7 @@
             <li>
                 <h2>Instituto Cumbres de Caracas</h2>
 
-                <img src="/assets/images/icc.png" alt="Instituto Cumbres de Caracas"/>
+                <img src={{ "/assets/images/icc.png" | relative_url }} alt="Instituto Cumbres de Caracas"/>
 
                 <div class="timeline">
                     <p>2017</p>
@@ -84,7 +83,7 @@
             <li>
                 <h2>Universidad Monteávila</h2>
 
-                <img src="/assets/images/uma.png" alt="Universidad Monteávila"/>
+                <img src={{ "/assets/images/uma.png" | relative_url }} alt="Universidad Monteávila"/>
 
                 <div class="timeline end">
                     <p style="margin-inline: 0;">2026</p>
@@ -100,19 +99,19 @@
                     <h3>{{site.data.strings[site.active_lang].programmingLanguages}}</h3>
                     <ul class="programming-languages">
                         <li>
-                            <img src="/assets/images/rust.png" alt="Rust">
+                            <img src={{ "/assets/images/rust.png" | relative_url }} alt="Rust">
                             <p>Rust</p>
                         </li>
                         <li>
-                            <img src="/assets/images/js.png" alt="JavaScript">
+                            <img src={{ "/assets/images/js.png" | relative_url }} alt="JavaScript">
                             <p>JavaScript</p>
                         </li>
                         <li>
-                            <img src="/assets/images/ts.png" alt="TypeScript">
+                            <img src={{ "/assets/images/ts.png" | relative_url }} alt="TypeScript">
                             <p>TypeScript</p>
                         </li>
                         <li>
-                            <img src="/assets/images/python.png" alt="Python">
+                            <img src={{ "/assets/images/python.png" | relative_url }} alt="Python">
                             <p>Python</p>
                         </li>
                     </ul>
@@ -121,15 +120,15 @@
                     <h3>{{site.data.strings[site.active_lang].frameworks}}</h3>
                     <ul class="programming-languages">
                         <li>
-                            <img src="/assets/images/nextjs.svg" alt="Next.js">
+                            <img src={{ "/assets/images/nextjs.svg" | relative_url }} alt="Next.js">
                             <p>Next.js</p>
                         </li>
                         <li>
-                            <img src="/assets/images/nodejs.svg" alt="Node.js">
+                            <img src={{ "/assets/images/nodejs.svg" | relative_url }} alt="Node.js">
                             <p>Node.js</p>
                         </li>
                         <li>
-                            <img src="/assets/images/graphQL.svg" alt="GraphQL">
+                            <img src={{ "/assets/images/graphQL.svg" | relative_url }} alt="GraphQL">
                             <p>GraphQL</p>
                         </li>
                     </ul>
@@ -138,19 +137,19 @@
                     <h3>{{site.data.strings[site.active_lang].others}}</h3>
                     <ul class="programming-languages">
                         <li>
-                            <img src="/assets/images/git.png" alt="Git">
+                            <img src={{ "/assets/images/git.png" | relative_url }} alt="Git">
                             <p>Git</p>
                         </li>
                         <li>
-                            <img src="/assets/images/github.png" alt="GitHub">
+                            <img src={{ "/assets/images/github.png" | relative_url }} alt="GitHub">
                             <p>GitHub</p>
                         </li>
                         <li>
-                            <img src="/assets/images/linux.png" alt="Linux">
+                            <img src={{ "/assets/images/linux.png" | relative_url }} alt="Linux">
                             <p>Linux</p>
                         </li>
                         <li>
-                            <img src="/assets/images/docker.png" alt="Docker">
+                            <img src={{ "/assets/images/docker.png" | relative_url }} alt="Docker">
                             <p>Docker</p>
                         </li>
                     </ul>
@@ -192,33 +191,33 @@
             <li class="project">
                 <h3>Vector: Interior Design</h3>
                 <a href="https://vectorinterior.design" target="_blank" rel="noopener noreferrer">
-                    <img src="/assets/images/vector-logo.svg" alt="Vector: Interior Design" class="project-logo">
+                    <img src={{ "/assets/images/vector-logo.svg" | relative_url }} alt="Vector: Interior Design" class="project-logo">
                </a>
                 <p>
                     {{site.data.strings[site.active_lang].vectorDescription}}
                 </p>
                 <a class="github" href="https://github.com/axel-dq/Vector-Interior-Design" target="_blank" rel="noopener noreferrer">
-                    <img src="/assets/images/github.png" alt="Github">
+                    <img src={{ "/assets/images/github.png" | relative_url }} alt="Github">
                 </a>
             </li>
             <li class="project">
                 <h3>UMA Casino</h3>
-                <img src="/assets/images/uma-casino.svg" alt="UMA Casino" class="project-logo">
+                <img src={{ "/assets/images/uma-casino.svg" | relative_url }} alt="UMA Casino" class="project-logo">
                 <p>
                     {{site.data.strings[site.active_lang].umaCasinoDescription}}
                 </p>
                 <a class="github" href="https://github.com/ad-quintero/UMA-Casino" target="_blank" rel="noopener noreferrer">
-                    <img src="/assets/images/github.png" alt="Github">
+                    <img src={{ "/assets/images/github.png" | relative_url }} alt="Github">
                 </a>
             </li>
             <li class="project">
                 <h3>Strawberry GraphQL</h3>
-                <img src="/assets/images/strawberry.png" alt="Strawberry GraphQL" class="project-logo">
+                <img src={{ "/assets/images/strawberry.png" | relative_url }} alt="Strawberry GraphQL" class="project-logo">
                 <p>
                     {{site.data.strings[site.active_lang].strawberryDescription}}
                 </p>
                 <a class="github" href="https://github.com/ad-quintero/UMA-Casino" target="_blank" rel="noopener noreferrer">
-                    <img src="/assets/images/github.png" alt="Github">
+                    <img src={{ "/assets/images/github.png" | relative_url }} alt="Github">
                 </a>
             </li>
         </ul>
@@ -234,11 +233,11 @@
                 aquintero_2030im@alumni.uma.edu.ve
             </a>
             <a href="https://github.com/axel-dq" target="_blank" rel="noopener noreferrer" class="contact-link">
-                <img src="/assets/images/github.png" alt="Github">
+                <img src={{ "/assets/images/github.png" | relative_url }} alt="Github">
                 Axel Quintero (Personal)
             </a>
             <a href="https://github.com/ad-quintero" target="_blank" rel="noopener noreferrer" class="contact-link">
-                <img src="/assets/images/github.png" alt="Github">
+                <img src={{ "/assets/images/github.png" | relative_url }} alt="Github">
                 Axel Quintero (UMA)
             </a>
             <a href="tel:584142264969" rel="noopener noreferrer" class="contact-link">
